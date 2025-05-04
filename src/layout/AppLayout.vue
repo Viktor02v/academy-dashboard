@@ -3,30 +3,32 @@ import { Icon } from "@iconify/vue";
 import { Button } from "@/components/ui/button";
 import { ref } from "vue";
 import { onBeforeUnmount, onMounted } from "vue";
+import router from "@/router";
 
 const topBarItems = [
   { label: "Dashboard", to: "/dashboard" },
-  { label: "Access", to: "/" },
-  { label: "Prepare", to: "/" },
-  { label: "Teach", to: "/" },
-  { label: "Monitor", to: "/" },
+  { label: "Access", to: "/access" },
+  { label: "Prepare", to: "/prepare" },
+  { label: "Teach", to: "/teach" },
+  { label: "Monitor", to: "/monitor" },
 ];
-
-const currentTime = ref<string>("");
-let timer: ReturnType<typeof setInterval>;
+const intervalId = ref<number>();
+const currentDate = ref("");
+const currentTime = ref("");
 
 function updateTime() {
   const now = new Date();
-  currentTime.value = now.toLocaleString();
+  currentDate.value = now.toLocaleDateString();
+  currentTime.value = now.toLocaleTimeString();
+  console.log(currentTime.value);
 }
 
+// Update every second
 onMounted(() => {
-  updateTime();
-  timer = setInterval(updateTime, 1000);
+  intervalId.value = setInterval(updateTime, 1000);
 });
-
 onBeforeUnmount(() => {
-  clearInterval(timer);
+  clearInterval(intervalId.value);
 });
 </script>
 
@@ -40,16 +42,31 @@ onBeforeUnmount(() => {
 
       <!-- TopBar Items -->
       <div class="w-full justify-center flex items-center space-x-[1.5rem]">
-        <nav v-for="item in topBarItems" :key="item.label">
-          <RouterLink :to="item.to" class="font-[500] text-[0.875rem]">
+
+        <nav v-for="(item, index) in topBarItems" :key="item.label">
+          <RouterLink
+            :to="item.to"
+            exact-active-class="text-gray-950 font-[600]
+            "
+            class="font-[500] text-[0.875rem] text-gray-400"
+          >
+
             {{ item.label }}
           </RouterLink>
         </nav>
       </div>
 
       <!-- Time Section -->
-      <div class="flex items-center justify-end space-x-[1.5rem]">
-        {{ currentTime }}
+      <div
+        class="flex items-center justify-center gap-4 bg-gray-100 p-2 rounded-2xl w-[15rem]"
+      >
+        <div class="flex items-center justify-center text-md space-x-[1.5rem]">
+          {{ currentDate }}
+        </div>
+
+        <div class="flex items-center justify-center text-md space-x-[1.5rem]">
+          {{ currentTime }}
+        </div>
       </div>
     </div>
 
@@ -57,8 +74,10 @@ onBeforeUnmount(() => {
     <div></div>
 
     <!-- Main Content -->
+
     <div class="w-full mt-[4rem] h-[calc(100%-4rem)]">
       <router-view />
+
     </div>
   </section>
 </template>

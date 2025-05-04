@@ -1,20 +1,47 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHistory } from "vue-router";
 import AppLayout from "../layout/AppLayout.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
-      path: '/',
+      path: "/",
       component: AppLayout,
       children: [
         {
-          path: '/dashboard',
-          component: () => import('../../src/components/Dashboard.vue')
-        }
-      ]
+          path: "/dashboard",
+
+          components: {
+            main: () => import("../components/Dashboard.vue"),
+          },
+        },
+        {
+          path: "/access",
+          components: {
+            main: () => import("../components/access/Access.vue"),
+          },
+        },
+        {
+          path: "/prepare",
+          components: {
+            main: () => import("../components/prepare/Prepare.vue"),
+          },
+        },
+        {
+          path: "/teach",
+          components: {
+            main: () => import("../components/teach/Teach.vue"),
+          },
+        },
+        {
+          path: "/monitor",
+          components: {
+            main: () => import("../components/monitor/Monitor.vue"),
+          },
+        },
+      ],
     },
   ],
-})
+});
 
-export default router
+export default router;
