@@ -47,7 +47,7 @@ const avatars = [
           </div>
           <div class="flex items-center">
             <Avatar
-              class="-mr-3 w-[35px] h-[35px] hover:scale-105"
+              class="-mr-3 w-[35px] transition-all duration-200 h-[35px] hover:scale-110"
               v-for="avatar in avatars"
               :key="avatar.src"
             >
