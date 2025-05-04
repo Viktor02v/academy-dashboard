@@ -42,6 +42,7 @@ onBeforeUnmount(() => {
 
       <!-- TopBar Items -->
       <div class="w-full justify-center flex items-center space-x-[1.5rem]">
+
         <nav v-for="(item, index) in topBarItems" :key="item.label">
           <RouterLink
             :to="item.to"
@@ -49,6 +50,7 @@ onBeforeUnmount(() => {
             "
             class="font-[500] text-[0.875rem] text-gray-400"
           >
+
             {{ item.label }}
           </RouterLink>
         </nav>
@@ -72,8 +74,10 @@ onBeforeUnmount(() => {
     <div></div>
 
     <!-- Main Content -->
-    <div class="w-full mt-[4rem] h-[calc(100vh-4rem)]">
-      <router-view name="main" />
+
+    <div class="w-full mt-[4rem] h-[calc(100%-4rem)]">
+      <router-view />
+
     </div>
   </section>
 </template>
