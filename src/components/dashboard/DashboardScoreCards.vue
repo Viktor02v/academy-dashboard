@@ -4,7 +4,7 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 </script>
 
 <template>
-  <div class="w-full h-[40.7%]">
+  <div class="w-full h-[300px]">
     <div class="flex w-full h-full items-center space-x-[2rem]">
       <!-- Left -->
       <div
@@ -128,5 +128,7 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+
+</style>
 
