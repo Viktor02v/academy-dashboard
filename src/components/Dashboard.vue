@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import DashboardHeader from './dashboard/DashboardHeader.vue'
-import DashboardScoreCards from './dashboard/DashboardScoreCards.vue'
+import DashboardHeader from "./dashboard/DashboardHeader.vue";
+import DashboardScoreCards from "./dashboard/DashboardScoreCards.vue";
 </script>
 
 <template>
@@ -12,7 +12,6 @@ import DashboardScoreCards from './dashboard/DashboardScoreCards.vue'
 
     <!-- Dashboard Score Cards -->
     <dashboard-score-cards />
-
   </div>
 </template>
 
