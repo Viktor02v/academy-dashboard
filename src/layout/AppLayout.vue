@@ -76,7 +76,7 @@ onBeforeUnmount(() => {
     <!-- Main Content -->
 
     <div class="w-full mt-[4rem] h-[calc(100%-4rem)]">
-      <router-view />
+      <router-view name="main" />
 
     </div>
   </section>
