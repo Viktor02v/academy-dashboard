@@ -1,33 +1,33 @@
 <script setup lang="ts">
-import { Icon } from '@iconify/vue'
-import { Button } from '@/components/ui/button'
-import { ref } from 'vue'
-import { onBeforeUnmount, onMounted } from 'vue'
+import { Icon } from "@iconify/vue";
+import { Button } from "@/components/ui/button";
+import { ref } from "vue";
+import { onBeforeUnmount, onMounted } from "vue";
 
 const topBarItems = [
-  { label: 'Dashboard', to: '/dashboard' },
-  { label: 'Access', to: '/' },
-  { label: 'Prepare', to: '/' },
-  { label: 'Teach', to: '/' },
-  { label: 'Monitor', to: '/' },
-]
+  { label: "Dashboard", to: "/dashboard" },
+  { label: "Access", to: "/" },
+  { label: "Prepare", to: "/" },
+  { label: "Teach", to: "/" },
+  { label: "Monitor", to: "/" },
+];
 
-const currentTime = ref<string>('')
-let timer: ReturnType<typeof setInterval>
+const currentTime = ref<string>("");
+let timer: ReturnType<typeof setInterval>;
 
 function updateTime() {
-  const now = new Date()
-  currentTime.value = now.toLocaleString()
+  const now = new Date();
+  currentTime.value = now.toLocaleString();
 }
 
 onMounted(() => {
-  updateTime()
-  timer = setInterval(updateTime, 1000)
-})
+  updateTime();
+  timer = setInterval(updateTime, 1000);
+});
 
 onBeforeUnmount(() => {
-  clearInterval(timer)
-})
+  clearInterval(timer);
+});
 </script>
 
 <template>
