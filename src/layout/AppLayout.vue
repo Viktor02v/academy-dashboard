@@ -5,7 +5,7 @@ import { ref } from 'vue'
 import { onBeforeUnmount, onMounted } from 'vue'
 
 const topBarItems = [
-  { label: 'Dashboard', to: '/' },
+  { label: 'Dashboard', to: '/dashboard' },
   { label: 'Access', to: '/' },
   { label: 'Prepare', to: '/' },
   { label: 'Teach', to: '/' },
@@ -34,7 +34,7 @@ onBeforeUnmount(() => {
   <section class="relative bg-white">
     <!-- TopBar -->
     <div
-      class="fixed h-[4rem] px-10 flex items-center bg-white w-full border-b-1 border-blue-500 top-0 z-50"
+      class="fixed h-[4rem] px-10 flex items-center bg-white w-full top-0 z-50"
     >
       <div class="text-[1rem] font-[500]">KOGPA</div>
 
@@ -58,8 +58,7 @@ onBeforeUnmount(() => {
 
     <!-- Main Content -->
     <div class="w-full mt-[4rem] h-[calc(100vh-4rem)]">
-      Something
-      <router-view name="main" />
+      <router-view />
     </div>
   </section>
 </template>
