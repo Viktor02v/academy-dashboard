@@ -16,9 +16,9 @@ const router = createRouter({
           },
         },
         {
-          path: "/access",
+          path: "/payment",
           components: {
-            main: () => import("../components/access/Access.vue"),
+            main: () => import("../components/fees/TuitionFeesComponent.vue"),
           },
         },
         {
