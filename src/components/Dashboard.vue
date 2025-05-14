@@ -44,7 +44,7 @@ onUnmounted(() => {
       <DashboardSidebar :sidebar-items="leftSidebarItems" icon-position="right" />
 
       <!-- Slider -->
-      <div class="w-full h-full px-[3rem]">
+      <div class="w-full h-full p-[3rem] border border-[#202f46] rounded-md">
         <img
           :src="carouselIMgs[currentImageIndex].src"
           class="w-full h-full object-cover rounded"

@@ -3,12 +3,11 @@ export type SidebarItem = {
   to?: string
   icon?: string
   src?: string
-  subItems?: SidebarItem[]
 }
 
 // left sidebar
 export const leftSidebarItems : SidebarItem[] = [
-  { label: 'Розклад', to: '/dashboard', icon: 'uil:schedule', subItems: [{label:'Денна форма', src: 'https://kogpa.edu.ua/uk/studentu/denna-forma-navchannia'}, {label:'Заочна форма', src: 'https://kogpa.edu.ua/uk/studentu/zaochna-forma-navchannia'}] },
+  { label: 'Розклад', to: '/schedule', icon: 'uil:schedule' },
   {
     label: 'Плата за навчання',
     to: '/payment',
