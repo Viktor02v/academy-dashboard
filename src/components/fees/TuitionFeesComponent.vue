@@ -10,7 +10,7 @@ import { leftButtons, rightButtons } from './buttons'
         <div v-for="button in leftButtons" :key="button.label">
           <a :href="button.src" target="_blank" rel="noopener noreferrer">
             <Button
-              class="w-full cursor-pointer  h-[200px] bg-[#492525d2] hover:bg-[#492525d2] active:bg-[#2f1a1a] border border-white text-3xl text-white"
+              class="w-full cursor-pointer  h-[200px] bg-gradient-to-b from-[#020817] to-[#0E1629] border border-[#202f46] active:from-[#0E1629] active:to-[#0E1629] text-3xl text-white"
             >
               {{ button.label }}
             </Button>
@@ -18,7 +18,7 @@ import { leftButtons, rightButtons } from './buttons'
         </div>
       </div>
 
-      <div class="w-1/3">
+      <div class="w-1/3 border border-[#202f46]">
         <img
           src="https://kogpa.edu.ua/images/main_dir/docs/2024/photo_2023-09-26_11-51-17%20(2).jpg"
           alt=""
@@ -29,7 +29,7 @@ import { leftButtons, rightButtons } from './buttons'
         <div v-for="button in rightButtons" :key="button.label">
           <a :href="button.src" target="_blank" rel="noopener noreferrer">
             <Button
-              class="w-full cursor-pointer  h-[200px] bg-[#492525d2] hover:bg-[#492525d2] active:bg-[#2f1a1a] border border-white text-3xl text-white"
+              class="w-full cursor-pointer  h-[200px] bg-gradient-to-b from-[#020817] to-[#0E1629] border border-[#202f46] active:from-[#0E1629] active:to-[#0E1629] text-3xl text-white"
             >
               {{ button.label }}
             </Button>

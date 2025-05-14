@@ -21,7 +21,7 @@ const router = useRouter()
           <div class="w-full relative h-[9.56rem] group">
             <a :href="item.src" target="_blank" rel="noopener noreferrer">
               <Button
-                class="w-full cursor-pointer  h-full bg-[#492525d2] hover:bg-[#492525d2] active:bg-[#2f1a1a] border border-white text-3xl text-white"
+                class="w-full cursor-pointer  h-full bg-gradient-to-b from-[#020817] to-[#0E1629] border border-[#202f46] active:from-[#0E1629] active:to-[#0E1629] text-3xl text-white"
                 @click="item.to && router.push(item.to)"
               >
                 {{ item.label }}
@@ -36,7 +36,7 @@ const router = useRouter()
               class="absolute w-[4rem] h-[4rem] z-50 top-1/2 translate-y-[-50%]"
             >
               <div
-                class="w-full h-full flex items-center justify-center bg-[#2f1a1a] border rounded border-white"
+                class="w-full h-full flex items-center justify-center bg-[#0E1629] border rounded border-white"
               >
                 <Icon
                   :icon="item.icon ?? ''"

@@ -21,22 +21,10 @@ const router = createRouter({
             main: () => import("../components/fees/TuitionFeesComponent.vue"),
           },
         },
-        {
-          path: "/prepare",
+          {
+          path: "/schedule",
           components: {
-            main: () => import("../components/prepare/Prepare.vue"),
-          },
-        },
-        {
-          path: "/teach",
-          components: {
-            main: () => import("../components/teach/Teach.vue"),
-          },
-        },
-        {
-          path: "/monitor",
-          components: {
-            main: () => import("../components/monitor/Monitor.vue"),
+            main: () => import("../components/schedule/ScheduleComponent.vue"),
           },
         },
       ],
